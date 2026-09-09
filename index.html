@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Torrador de café automatizado | Oficina de Integração</title>
+<meta name="description" content="Blog de acompanhamento do projeto de um torrador de café de bancada instrumentado, construído a partir de uma pipoqueira elétrica. Oficina de Integração (ELE41), UTFPR-CT.">
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<div class="container">
+
+<header class="topo">
+  <h1>Torrador de café automatizado</h1>
+  <p class="sub">Oficina de Integração (ELE41) · Engenharia Eletrônica · UTFPR-CT · 2026</p>
+  <nav>
+    <a href="#o-projeto">O projeto</a>
+    <a href="#decisoes">Decisões técnicas</a>
+    <a href="#cronograma">Cronograma</a>
+    <a href="#registros">Registros</a>
+  </nav>
+</header>
+
+<section class="resumo">
+  <p>Este projeto transforma uma pipoqueira elétrica de ar quente em um torrador de
+  café de bancada instrumentado, capaz de executar perfis de torra de forma
+  repetível. O que falta à pipoqueira não é capacidade térmica: é instrumentação
+  e controle.</p>
+</section>
+
+<h2 id="o-projeto">O projeto</h2>
+
+<p>A torra é a etapa que mais influencia o perfil sensorial do café, e o que
+distingue a torra profissional da amadora não é a temperatura final atingida, mas
+a <strong>repetibilidade</strong>. Reproduzir a mesma curva de temperatura dezenas
+de vezes exige medir a temperatura da massa de grãos ao longo do tempo e atuar
+sobre o processo em resposta a essa medição.</p>
+
+<p>Uma pipoqueira de ar quente já é, do ponto de vista de engenharia, um torrador
+de leito fluidizado: tem resistência, soprador e câmara de circulação. Torrar café
+nela é prática comum entre entusiastas, mas o resultado não é repetível, porque
+não há sensor, não há atuação e, no circuito de fábrica, resistência e ventilador
+compartilham o mesmo acionamento.</p>
+
+<p>O equipamento em desenvolvimento controla de forma independente a potência
+entregue à resistência e a rotação do soprador, mede a temperatura da massa de
+grãos por termopar e executa perfis de torra em malha fechada. O controle é
+embarcado em um ESP32, que também hospeda a interface de operação em um servidor
+web próprio, acessível pelo navegador através de um ponto de acesso Wi-Fi gerado
+pelo próprio equipamento, sem computador dedicado e sem instalar nada.</p>
+
+<div class="equipe">
+  <strong>Equipe</strong>
+  <ul>
+    <li>Pedro Henrique Taschetto de Souza: hardware e potência</li>
+    <li>Luiz Alberto Martins Prust: software e controle</li>
+    <li>João Victor de Oliveira: mecânica e integração</li>
+  </ul>
+</div>
+
+<h2 id="decisoes">Decisões técnicas</h2>
+
+<table>
+  <thead>
+    <tr><th>Frente</th><th>Escolha</th><th>Por quê</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sensoriamento</td>
+      <td>Termopar tipo K de junção exposta com MAX31855</td>
+      <td>A variável controlada é a derivada da temperatura, então rapidez de resposta pesa mais que exatidão absoluta</td>
+    </tr>
+    <tr>
+      <td>Processamento</td>
+      <td>ESP32</td>
+      <td>Wi-Fi e sistema de arquivos para hospedar o servidor web; dois núcleos permitem isolar a malha de controle da pilha de rede</td>
+    </tr>
+    <tr>
+      <td>Resistência</td>
+      <td>Ciclos integrais com SSR, janela de ~2 s</td>
+      <td>A constante térmica dos grãos (20 a 60 s) integra a janela; o ângulo de fase só traria ruído sobre o termopar</td>
+    </tr>
+    <tr>
+      <td>Motor</td>
+      <td>Ângulo de fase com módulo dotado de saída de zero-cross</td>
+      <td>A constante mecânica do rotor (100 a 300 ms) não absorve a ondulação dos ciclos integrais: o motor engasgaria em rotação baixa</td>
+    </tr>
+    <tr>
+      <td>Controle</td>
+      <td>Cascata: RoR na malha interna, temperatura na externa</td>
+      <td>Implementação incremental, com PID sobre temperatura como linha de base funcional</td>
+    </tr>
+    <tr>
+      <td>Interface</td>
+      <td>Servidor web embarcado no ESP32</td>
+      <td>Torna o equipamento autônomo, sem depender de supervisório externo em computador dedicado</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="cronograma">Cronograma</h2>
+
+<table>
+  <thead>
+    <tr><th>Data</th><th>Marco</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>09/09/2026</td><td>Plano de Projeto</td></tr>
+    <tr><td>16/09/2026</td><td>Entregável 1: este blog</td></tr>
+    <tr><td>07/10/2026</td><td>Entregável 2: potência acionando as cargas e leitura de temperatura validada</td></tr>
+    <tr><td>21/10/2026</td><td>Marco interno: modelo do processo e malha de controle em bancada</td></tr>
+    <tr><td>11/11/2026</td><td>Entregável 3: integração mecânica, de hardware e de software</td></tr>
+    <tr><td>25/11/2026</td><td>Entregável 4: resultados consolidados e vídeo</td></tr>
+    <tr><td>02/12/2026</td><td>Demonstração e Relatório Técnico</td></tr>
+    <tr><td>09 e 16/12/2026</td><td>Banca</td></tr>
+  </tbody>
+</table>
+
+<h2 id="registros">Registros</h2>
+
+<ul class="posts">
+  <li>
+    <span class="data">9 de setembro de 2026</span>
+    <a href="./posts/2026-09-09-plano-de-projeto.html">Plano de Projeto entregue</a>
+  </li>
+</ul>
+
+<footer>
+  Projeto desenvolvido na disciplina Oficina de Integração: Eletricidade,
+  Eletrônica e Computação na Prática (ELE41), do curso de Engenharia Eletrônica
+  da UTFPR, Campus Curitiba.<br>
+  Café verde para os ensaios cedido pela Manifesto Café.
+</footer>
+
+</div>
+</body>
+</html>
