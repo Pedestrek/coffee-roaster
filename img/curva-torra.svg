@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Curva de torra com temperatura da massa de grãos e taxa de subida">
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#c2643a" stop-opacity=".30"/>
+    <stop offset="100%" stop-color="#c2643a" stop-opacity="0"/>
+  </linearGradient>
+</defs>
+<rect width="1200" height="750" fill="#f7f3ee"/>
+<line x1="90" y1="204" x2="1110" y2="204" stroke="#ded5cb" stroke-width="1"/>
+<line x1="90" y1="318" x2="1110" y2="318" stroke="#ded5cb" stroke-width="1"/>
+<line x1="90" y1="432" x2="1110" y2="432" stroke="#ded5cb" stroke-width="1"/>
+<line x1="90" y1="546" x2="1110" y2="546" stroke="#ded5cb" stroke-width="1"/>
+<path d="M90.0 559.4 L175.0 539.3 L260.0 492.4 L345.0 435.4 L430.0 375.0 L515.0 328.1 L600.0 287.8 L685.0 254.3 L770.0 224.1 L855.0 197.3 L940.0 173.8 L1025.0 157.1 L1110.0 143.6 L1110.0 660.0 L90.0 660.0 Z" fill="url(#g)"/>
+<path d="M90.0 559.4 L175.0 539.3 L260.0 492.4 L345.0 435.4 L430.0 375.0 L515.0 328.1 L600.0 287.8 L685.0 254.3 L770.0 224.1 L855.0 197.3 L940.0 173.8 L1025.0 157.1 L1110.0 143.6" fill="none" stroke="#7a2f14" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M90.0 508.0 L175.0 432.0 L260.0 356.0 L345.0 337.0 L430.0 375.0 L515.0 403.5 L600.0 432.0 L685.0 460.5 L770.0 489.0 L855.0 517.5 L940.0 546.0 L1025.0 565.0 L1110.0 584.0" fill="none" stroke="#c2643a" stroke-width="3.5" stroke-dasharray="11 9" stroke-linecap="round"/>
+<line x1="855" y1="90" x2="855" y2="660" stroke="#7a2f14" stroke-width="1.5" stroke-dasharray="5 6" opacity=".55"/>
+<text x="869" y="122" font-family="Georgia,serif" font-size="27" fill="#7a2f14" opacity=".8">1º crack</text>
+</svg>

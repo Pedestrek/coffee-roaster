@@ -4,134 +4,138 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Torrador de café automatizado | Oficina de Integração</title>
-<meta name="description" content="Blog de acompanhamento do projeto de um torrador de café de bancada instrumentado, construído a partir de uma pipoqueira elétrica. Oficina de Integração (ELE41), UTFPR-CT.">
+<meta name="description" content="Um torrador de café de bancada que repete a mesma torra todas as vezes. Projeto da Oficina de Integração (ELE41), UTFPR-CT.">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-<div class="container">
 
-<header class="topo">
-  <h1>Torrador de café automatizado</h1>
-  <p class="sub">Oficina de Integração (ELE41) · Engenharia Eletrônica · UTFPR-CT · 2026</p>
-  <nav>
-    <a href="#o-projeto">O projeto</a>
-    <a href="#decisoes">Decisões técnicas</a>
-    <a href="#cronograma">Cronograma</a>
-    <a href="#registros">Registros</a>
-  </nav>
+<div class="progresso"></div>
+
+<nav class="nav">
+  <a class="marca" href="./index.html">Torrador</a>
+  <div class="links">
+    <a href="./blog.html">Registros</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grade">
+    <div>
+      <p class="rotulo rev">Oficina de Integração · UTFPR-CT</p>
+      <h1 class="display rev d1">A mesma torra,<br>todas as vezes.</h1>
+      <p class="lead rev d2">Um torrador de bancada que faz exatamente o que você mandou.</p>
+      <div class="rev d3">
+        <a class="btn cheio" href="./blog.html">Acompanhar o projeto <span class="seta">→</span></a>
+      </div>
+    </div>
+    <div class="hero-foto rev d2" data-parallax>
+      <div class="hero-brilho"></div>
+      <picture>
+        <source srcset="./img/pipoqueira.webp" type="image/webp">
+        <img src="./img/pipoqueira.jpg" alt="Pipoqueira elétrica de ar quente, base do equipamento" width="900" height="900">
+      </picture>
+    </div>
+  </div>
 </header>
 
-<section class="resumo">
-  <p>Este projeto transforma uma pipoqueira elétrica de ar quente em um torrador de
-  café de bancada instrumentado, capaz de executar perfis de torra de forma
-  repetível. O que falta à pipoqueira não é capacidade térmica: é instrumentação
-  e controle.</p>
+<section class="manifesto">
+  <div class="wrap">
+    <h2 class="display rev">Torra profissional não é temperatura.<br>
+      É <span class="destaque">repetibilidade</span>.</h2>
+  </div>
 </section>
 
-<h2 id="o-projeto">O projeto</h2>
+<section class="sec-escura manifesto">
+  <div class="wrap">
+    <h2 class="display rev">Uma pipoqueira já é<br>um torrador.</h2>
+    <p class="lead rev d1" style="margin:2rem auto 0;text-align:center">Falta instrumentação.</p>
+  </div>
+</section>
 
-<p>A torra é a etapa que mais influencia o perfil sensorial do café, e o que
-distingue a torra profissional da amadora não é a temperatura final atingida, mas
-a <strong>repetibilidade</strong>. Reproduzir a mesma curva de temperatura dezenas
-de vezes exige medir a temperatura da massa de grãos ao longo do tempo e atuar
-sobre o processo em resposta a essa medição.</p>
+<section id="como">
+  <div class="wrap">
+    <div class="passos">
+      <div class="passos-fixo">
+        <div class="num">01</div>
+      </div>
+      <div>
+        <article class="passo ativo" data-num="01">
+          <h3 class="display">Medir</h3>
+          <p>Termopar dentro da massa de grãos.</p>
+        </article>
+        <article class="passo" data-num="02">
+          <h3 class="display">Atuar</h3>
+          <p>Potência sob comando contínuo.</p>
+        </article>
+        <article class="passo" data-num="03">
+          <h3 class="display">Controlar</h3>
+          <p>O perfil se executa sozinho.</p>
+        </article>
+        <article class="passo" data-num="04">
+          <h3 class="display">Acompanhar</h3>
+          <p>No navegador do seu celular.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
 
-<p>Uma pipoqueira de ar quente já é, do ponto de vista de engenharia, um torrador
-de leito fluidizado: tem resistência, soprador e câmara de circulação. Torrar café
-nela é prática comum entre entusiastas, mas o resultado não é repetível, porque
-não há sensor, não há atuação e, no circuito de fábrica, resistência e ventilador
-compartilham o mesmo acionamento.</p>
+<section class="sec-escura">
+  <div class="wrap">
+    <div class="numeros">
+      <div class="numero rev">
+        <div class="valor">60 g</div>
+        <div class="desc">por batelada</div>
+      </div>
+      <div class="numero rev d1">
+        <div class="valor">8–14</div>
+        <div class="desc">minutos por torra</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<p>O equipamento em desenvolvimento controla de forma independente a potência
-entregue à resistência e a rotação do soprador, mede a temperatura da massa de
-grãos por termopar e executa perfis de torra em malha fechada. O controle é
-embarcado em um ESP32, que também hospeda a interface de operação em um servidor
-web próprio, acessível pelo navegador através de um ponto de acesso Wi-Fi gerado
-pelo próprio equipamento, sem computador dedicado e sem instalar nada.</p>
+<section class="cta">
+  <div class="wrap">
+    <h2 class="display rev" style="max-width:16ch;margin:0 auto 2.4rem">Os detalhes estão
+      nos registros.</h2>
+    <div class="rev d1"><a class="btn cheio" href="./blog.html">Ver os registros <span class="seta">→</span></a></div>
+  </div>
+</section>
 
-<div class="equipe">
-  <strong>Equipe</strong>
-  <ul>
-    <li>Pedro Henrique Taschetto de Souza: hardware e potência</li>
-    <li>Luiz Alberto Martins Prust: software e controle</li>
-    <li>João Victor de Oliveira: mecânica e integração</li>
-  </ul>
-</div>
-
-<h2 id="decisoes">Decisões técnicas</h2>
-
-<table>
-  <thead>
-    <tr><th>Frente</th><th>Escolha</th><th>Por quê</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Sensoriamento</td>
-      <td>Termopar tipo K de junção exposta com MAX31855</td>
-      <td>A variável controlada é a derivada da temperatura, então rapidez de resposta pesa mais que exatidão absoluta</td>
-    </tr>
-    <tr>
-      <td>Processamento</td>
-      <td>ESP32</td>
-      <td>Wi-Fi e sistema de arquivos para hospedar o servidor web; dois núcleos permitem isolar a malha de controle da pilha de rede</td>
-    </tr>
-    <tr>
-      <td>Resistência</td>
-      <td>Ciclos integrais com SSR, janela de ~2 s</td>
-      <td>A constante térmica dos grãos (20 a 60 s) integra a janela; o ângulo de fase só traria ruído sobre o termopar</td>
-    </tr>
-    <tr>
-      <td>Motor</td>
-      <td>Ângulo de fase com módulo dotado de saída de zero-cross</td>
-      <td>A constante mecânica do rotor (100 a 300 ms) não absorve a ondulação dos ciclos integrais: o motor engasgaria em rotação baixa</td>
-    </tr>
-    <tr>
-      <td>Controle</td>
-      <td>Cascata: RoR na malha interna, temperatura na externa</td>
-      <td>Implementação incremental, com PID sobre temperatura como linha de base funcional</td>
-    </tr>
-    <tr>
-      <td>Interface</td>
-      <td>Servidor web embarcado no ESP32</td>
-      <td>Torna o equipamento autônomo, sem depender de supervisório externo em computador dedicado</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="cronograma">Cronograma</h2>
-
-<table>
-  <thead>
-    <tr><th>Data</th><th>Marco</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>09/09/2026</td><td>Plano de Projeto</td></tr>
-    <tr><td>16/09/2026</td><td>Entregável 1: este blog</td></tr>
-    <tr><td>07/10/2026</td><td>Entregável 2: potência acionando as cargas e leitura de temperatura validada</td></tr>
-    <tr><td>21/10/2026</td><td>Marco interno: modelo do processo e malha de controle em bancada</td></tr>
-    <tr><td>11/11/2026</td><td>Entregável 3: integração mecânica, de hardware e de software</td></tr>
-    <tr><td>25/11/2026</td><td>Entregável 4: resultados consolidados e vídeo</td></tr>
-    <tr><td>02/12/2026</td><td>Demonstração e Relatório Técnico</td></tr>
-    <tr><td>09 e 16/12/2026</td><td>Banca</td></tr>
-  </tbody>
-</table>
-
-<h2 id="registros">Registros</h2>
-
-<ul class="posts">
-  <li>
-    <span class="data">9 de setembro de 2026</span>
-    <a href="./posts/2026-09-09-plano-de-projeto.html">Plano de Projeto entregue</a>
-  </li>
-</ul>
-
-<footer>
-  Projeto desenvolvido na disciplina Oficina de Integração: Eletricidade,
-  Eletrônica e Computação na Prática (ELE41), do curso de Engenharia Eletrônica
-  da UTFPR, Campus Curitiba.<br>
-  Café verde para os ensaios cedido pela Manifesto Café.
+<footer class="rodape">
+  <div class="wrap">
+    <div class="grade">
+      <div>
+        <h5>O projeto</h5>
+        <p style="margin:0;max-width:34ch">Torrador de café de bancada instrumentado,
+          desenvolvido na disciplina Oficina de Integração (ELE41), Engenharia Eletrônica,
+          UTFPR Campus Curitiba.</p>
+      </div>
+      <div>
+        <h5>Equipe</h5>
+        <ul>
+          <li>Pedro Henrique Taschetto de Souza</li>
+          <li>Luiz Alberto Martins Prust</li>
+          <li>João Victor de Oliveira</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Navegar</h5>
+        <ul>
+          <li><a href="./index.html">Início</a></li>
+          <li><a href="./blog.html">Registros</a></li>
+          <li><a href="https://github.com/Pedestrek/coffee-roaster">Repositório</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </footer>
 
-</div>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
+<script src="./js/main.js" defer></script>
 </body>
 </html>
