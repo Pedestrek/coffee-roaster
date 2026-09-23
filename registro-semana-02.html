@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Semana 02 | Torrador de café automatizado</title>
+<meta name="description" content="Registro da segunda semana do projeto: instrumentação, leitura de temperatura e validação do termopar e ajustes iniciais do comportamento térmico.">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<div class="progresso"></div>
+
+<nav class="nav solido">
+  <a class="marca" href="./index.html">Torrador</a>
+  <div class="links">
+    <a href="./index.html">Início</a>
+    <a href="./blog.html" aria-current="page">Registros</a>
+    <a href="https://github.com/Pedestrek/coffee-roaster">Repositório</a>
+  </div>
+</nav>
+
+<main class="wrap artigo">
+  <article>
+    <p class="rotulo rev">Registro · Semana 02</p>
+    <h1 class="display rev d1">Instrumentação e primeiros dados de temperatura</h1>
+    <p class="meta rev d2"> Sensores, ruído e posicionamento</p>
+
+    <figure class="capa rev d2">
+      <img src="./img/pipoqueira.jpg" alt="Sistema de instrumentação do torrador" width="1200" height="900">
+    </figure>
+
+    <div class="rev d3">
+      <p>A segunda semana foi marcada pela montagem dos sensores e pela primeira análise do comportamento térmico em operação real. O objetivo era confirmar o que o termopar conseguia ver em comparação com a temperatura interna percebida pela máquina.</p>
+
+      <h2>Teste de leitura</h2>
+      <p>Medimos a temperatura em diferentes pontos da câmara e vimos que o comportamento não era linear. O sensor mais perto da parede do equipamento captava aquecimento mais rápido, enquanto a leitura central dava uma resposta mais realista ao fluxo de ar na direção da massa. Isso reforçou que o posicionamento da sonda é tão importante quanto a escolha do sensor.</p>
+
+      <h2>Ruído e filtro</h2>
+      <p>Uma parte do trabalho consistiu em separar sinal útil de oscilações de curto prazo. O uso de conversão analógica e a presença de ruído elétrico nas linhas causaram flutuações que não eram relevantes para o processo, mas que poderiam afetar a lógica de controle se não fossem tratadas. Foi decidido reduzir essa influência antes de avançar para a lógica de atuação.</p>
+
+      <h2>Rota de ação</h2>
+      <p>O próximo passo é repetir os testes em carga com grãos e usar uma curva em função do tempo para validar a resposta do sistema. Com esse conjunto de dados, será possível desenhar a ação da potência com base em temperatura e não apenas em observações pontuais.</p>
+    </div>
+  </article>
+</main>
+
+<section class="cta" style="padding-top:4rem">
+  <div class="wrap">
+    <div class="rev"><a class="btn" href="./blog.html">← Voltar aos registros</a></div>
+  </div>
+</section>
+
+<footer class="rodape">
+  <div class="wrap">
+    <div class="grade">
+      <div>
+        <h5>O projeto</h5>
+        <p style="margin:0;max-width:34ch">Torrador de café de bancada instrumentado, desenvolvido na disciplina Oficina de Integração (ELE41), Engenharia Eletrônica, UTFPR Campus Curitiba.</p>
+      </div>
+      <div>
+        <h5>Equipe</h5>
+        <ul>
+          <li>Pedro Henrique Taschetto de Souza</li>
+          <li>Luiz Alberto Martins Prust</li>
+          <li>João Victor de Oliveira</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Navegar</h5>
+        <ul>
+          <li><a href="./index.html">Início</a></li>
+          <li><a href="./blog.html">Registros</a></li>
+          <li><a href="https://github.com/Pedestrek/coffee-roaster">Repositório</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
+<script src="./js/main.js" defer></script>
+</body>
+</html>

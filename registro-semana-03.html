@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Semana 03 | Torrador de café automatizado</title>
+<meta name="description" content="Registro da terceira semana do projeto: primeiros perfis de torra, ajustes de potência e início do controle de temperatura.">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<div class="progresso"></div>
+
+<nav class="nav solido">
+  <a class="marca" href="./index.html">Torrador</a>
+  <div class="links">
+    <a href="./index.html">Início</a>
+    <a href="./blog.html" aria-current="page">Registros</a>
+    <a href="https://github.com/Pedestrek/coffee-roaster">Repositório</a>
+  </div>
+</nav>
+
+<main class="wrap artigo">
+  <article>
+    <p class="rotulo rev">Registro · Semana 03</p>
+    <h1 class="display rev d1">Primeiro perfil de torra e ajustes de potência</h1>
+    <p class="meta rev d2"> Primeiro ciclo controlado e estratégia de aquecimento</p>
+
+    <figure class="capa rev d2">
+      <img src="./img/pipoqueira.jpg" alt="Controle de potência do torrador durante a torra" width="1200" height="900">
+    </figure>
+
+    <div class="rev d3">
+      <p>Na terceira semana, o foco mudou para a lógica de controle. A ideia não era criar um perfil sofisticado de uma vez, mas começar a compor as etapas fundamentais da torra: aquecimento inicial, estabilização, desenvolvimento e resfriamento gradual.</p>
+
+      <h2>Primeiro ciclo executado</h2>
+      <p>O primeiro ciclo mostrou que a pipoqueira consegue seguir uma curva de temperatura em um intervalo útil, mas com atraso térmico muito evidente. Isso significa que qualquer controle precisa reagir com antecedência, ajustando a potência antes que a temperatura ultrapasse o alvo. O processo ficou mais claro quando notamos que o sistema responde em tempo bastante lento em comparação com a velocidade de variação de potência.</p>
+
+      <h2>Estratégia de ajuste</h2>
+      <p>Foi definido um padrão inicial de potência em degraus: mais energia no início para aquecer a massa e menos energia na etapa seguinte, em um movimento que reduza a deriva de temperatura e aumente a estabilidade. O comportamento ainda é uma aproximação, mas evidencia a direção correta: controlar a entrada de potência em vez de tentar corrigir a temperatura apenas no momento em que ela passa do limite.</p>
+
+      <h2>O que será validado</h2>
+      <p>As próximas iterações devem medir a repetibilidade entre bateladas e entender o quão sensível o processo é a variações na carga e ao ambiente. O objetivo é que o perfil de torra se torne previsível o suficiente para que a máquina execute sempre a mesma sequência, independentemente do operador.</p>
+    </div>
+  </article>
+</main>
+
+<section class="cta" style="padding-top:4rem">
+  <div class="wrap">
+    <div class="rev"><a class="btn" href="./blog.html">← Voltar aos registros</a></div>
+  </div>
+</section>
+
+<footer class="rodape">
+  <div class="wrap">
+    <div class="grade">
+      <div>
+        <h5>O projeto</h5>
+        <p style="margin:0;max-width:34ch">Torrador de café de bancada instrumentado, desenvolvido na disciplina Oficina de Integração (ELE41), Engenharia Eletrônica, UTFPR Campus Curitiba.</p>
+      </div>
+      <div>
+        <h5>Equipe</h5>
+        <ul>
+          <li>Pedro Henrique Taschetto de Souza</li>
+          <li>Luiz Alberto Martins Prust</li>
+          <li>João Victor de Oliveira</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Navegar</h5>
+        <ul>
+          <li><a href="./index.html">Início</a></li>
+          <li><a href="./blog.html">Registros</a></li>
+          <li><a href="https://github.com/Pedestrek/coffee-roaster">Repositório</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
+<script src="./js/main.js" defer></script>
+</body>
+</html>

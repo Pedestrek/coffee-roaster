@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Semana 01 | Torrador de café automatizado</title>
+<meta name="description" content="Registro da primeira semana do projeto: base do protótipo, diagnóstico da pipoqueira e primeira decisão de arquitetura.">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<div class="progresso"></div>
+
+<nav class="nav solido">
+  <a class="marca" href="./index.html">Torrador</a>
+  <div class="links">
+    <a href="./index.html">Início</a>
+    <a href="./blog.html" aria-current="page">Registros</a>
+    <a href="https://github.com/Pedestrek/coffee-roaster">Repositório</a>
+  </div>
+</nav>
+
+<main class="wrap artigo">
+  <article>
+    <p class="rotulo rev">Registro · Semana 01</p>
+    <h1 class="display rev d1">Base do protótipo e primeiro diagnóstico</h1>
+    <p class="meta rev d2">Abertura do projeto e estudo da estrutura interna da máquina</p>
+
+    <div class="galeria-2 rev d2">
+      <img src="./img/pipoqueira_desmontada1.jpeg" alt="Parte interna da pipoqueira elétrica desmontada" width="1200" height="900">
+      <img src="./img/pipoqueira_desmontada2.jpeg" alt="Detalhe da estrutura interna da pipoqueira elétrica" width="1200" height="900">
+    </div>
+
+    <div class="rev d3">
+      <p>Na primeira semana, o foco foi entender profundamente a estrutura interna da pipoqueira elétrica que servirá como base do torrador automatizado. Em vez de partir diretamente para a automação, a equipe dedicou o tempo à análise do equipamento para mapear como o ar quente é gerado, como ele percorre a câmara e quais partes têm papel central no processo térmico.</p>
+
+      <h2>Estudo da parte interna</h2>
+      <p>Durante a desmontagem, observamos a presença da resistência elétrica, do ventilador, do circuito de aquecimento, da estrutura da câmara e dos pontos em que o ar é empurrado para dentro do sistema. Esse mapeamento foi essencial para entender onde a temperatura realmente muda e onde a instrumentação precisa ser instalada para medir de forma confiável.</p>
+
+      <h2>O que foi identificado</h2>
+      <p>O principal ponto de atenção foi a relação entre a resistência e o fluxo de ar. A máquina foi projetada para aquecer rapidamente o ambiente interno e empurrar esse ar pela câmara, mas esse mesmo fluxo cria zonas com temperatura diferente ao longo do percurso. Isso explica por que a posição do sensor não pode ser escolhida de forma intuitiva: ela precisa representar o ponto em que a massa de café será efetivamente aquecida.</p>
+
+      <p>Além disso, também estudamos a forma como o sistema é alimentado, o isolamento térmico da estrutura e os componentes que podem interferir na leitura dos sensores. Essa investigação serviu como base para decidir quais modificações seriam realmente necessárias e quais partes poderiam ser mantidas sem comprometer o funcionamento original.</p>
+
+      <h2>Decisão de arquitetura</h2>
+      <p>Com esse diagnóstico, ficou claro que a maior dificuldade não é apenas gerar calor, mas controlar a distribuição térmica de forma previsível. Em vez de automatizar sem entender a máquina, a equipe decidiu usar a primeira semana para validar a base física do sistema, confirmar o melhor ponto de medição e estabelecer a estratégia de atuação da potência e do fluxo de ar.</p>
+
+      <h2>O que ficou em aberto</h2>
+      <p>Falta validar a resposta térmica em operação real com grãos e confirmar qual ponto interno oferece a melhor referência para o controle. Também será necessário analisar o comportamento do sistema em diferentes potências e verificar como o equipamento reage ao aumento de carga e ao tempo de torra. Esses dados vão orientar a próxima etapa: a instrumentação e a lógica de controle.</p>
+    </div>
+  </article>
+</main>
+
+<section class="cta" style="padding-top:4rem">
+  <div class="wrap">
+    <div class="rev"><a class="btn" href="./blog.html">← Voltar aos registros</a></div>
+  </div>
+</section>
+
+<footer class="rodape">
+  <div class="wrap">
+    <div class="grade">
+      <div>
+        <h5>O projeto</h5>
+        <p style="margin:0;max-width:34ch">Torrador de café de bancada instrumentado, desenvolvido na disciplina Oficina de Integração (ELE41), Engenharia Eletrônica, UTFPR Campus Curitiba.</p>
+      </div>
+      <div>
+        <h5>Equipe</h5>
+        <ul>
+          <li>Pedro Henrique Taschetto de Souza</li>
+          <li>Luiz Alberto Martins Prust</li>
+          <li>João Victor de Oliveira</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Navegar</h5>
+        <ul>
+          <li><a href="./index.html">Início</a></li>
+          <li><a href="./blog.html">Registros</a></li>
+          <li><a href="https://github.com/Pedestrek/coffee-roaster">Repositório</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
+<script src="./js/main.js" defer></script>
+</body>
+</html>

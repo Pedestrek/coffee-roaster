@@ -169,8 +169,10 @@ section { padding: clamp(4.5rem, 11vw, 9rem) 0; }
 }
 .registro:nth-child(even) .registro-arte { order: 2; }
 .registro-arte { overflow: hidden; border-radius: 4px; background: var(--papel-2); }
-.registro-arte img { width: 100%; transition: transform .8s cubic-bezier(.2,.7,.2,1); }
-.registro:hover .registro-arte img { transform: scale(1.04); }
+.registro-arte img,
+.registro-arte video { width: 100%; display: block; transition: transform .8s cubic-bezier(.2,.7,.2,1); }
+.registro:hover .registro-arte img,
+.registro:hover .registro-arte video { transform: scale(1.04); }
 .registro .data { font-size: .82rem; color: var(--tinta-2); margin: 0 0 .8rem; }
 .registro h2 { margin: 0 0 1rem; }
 .registro p.resumo { margin: 0 0 1.6rem; color: var(--tinta-2); max-width: 48ch; }
@@ -195,6 +197,26 @@ section { padding: clamp(4.5rem, 11vw, 9rem) 0; }
 .artigo h2 { font-family: var(--display); font-size: 1.8rem; margin: 3rem 0 1rem; }
 .artigo p { margin: 0 0 1.35rem; }
 .artigo .capa { margin: 0 0 3rem; border-radius: 4px; overflow: hidden; }
+.artigo .capa video { display: block; width: 100%; height: auto; border-radius: 4px; background: #000; }
+
+.galeria-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0 0 2.5rem;
+}
+.galeria-2 img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  object-fit: cover;
+  background: var(--papel-2);
+}
+
+@media (max-width: 42rem) {
+  .galeria-2 { grid-template-columns: 1fr; }
+}
 
 /* ---------- rodapé ---------- */
 
